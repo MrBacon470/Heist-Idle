@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="JS/Internal/jquery-3.6.0.min.js"></script>
+    <script src="JS/Internal/notify.js"></script>
+    <link rel="stylesheet" href="CSS/Theme-Original.css">
+    <link id="faviconLink" rel="icon" type="image/png" href="Imgs/flasks/mysticalFlask.png">
+    <title>Heist Idle</title>
+</head>
+<body>
+    <div id="promptContainer" class="modalContainer">
+        <div id="prompt">
+            <h3 id="promptTitle" style="text-align:center"></h3>
+            <input id="promptInput" type="text" placeholder="Enter text">
+            <button id="promptButton">Submit</button>
+        </div>
+    </div>
+    <div id="alertContainer" class="modalContainer">
+        <div id="alert">
+            <h3 id="alertTitle" style="text-align:center">Welcome back gamer!</h3>
+            <p id="alertContent" style="text-align:center">New things have been added since last time</p>
+            <button id="closeAlert" onclick="closeModal(0)">Thanks!</button>
+            <br>
+        </div>
+    </div>
+    <div id="confirmContainer" class="modalContainer">
+        <div id="confirm" class="flexCol">
+            <h3 id="confirmTitle" style="text-align:center">Are you sure?</h3>
+            <p id="confirmContent" style="margin-bottom:1vh;text-align:center">New things have been added since last time</p>
+            <div class="flexRow">
+                <button id="noConfirm" class="lockedResearch" style="margin-right:0.5vw">No!</button>
+                <button id="yesConfirm" class="unlockedResearch" style="margin-left:0.5vw">Yes!</button>
+            </div>
+            <br>
+        </div>
+    </div>
+    <div id="mainHeader" class="flexRow">
+        <div class="credit"><p id="spendingMoneyText" style="color:var(--money-color)">Spending: 0.00</p><img src="IMGS/money.png"></div>
+        <div class="credit"><p id="offshoreMoneyText" style="color:var(--offshore-color)">Offshore: 0.00</p><img src="IMGS/offshoreMoney.png"></div>
+        <div class="credit"><img src="IMGS/level.png"><p id="xpLevelText" style="color:var(--xp-color)">: 0.00</p></div>
+    </div>
+    <div id="tabButtonHolder" class="flexRow">
+        <button id="tabButton0">Equipment</button>
+        <button id="tabButton1">Crew</button>
+        <button id="tabButton2">Contracts</button>
+        <button id="tabButton3">Infamy</button>
+        <button id="tabButton4">Settings</button>
+    </div>
+    <div id="equipmentTab" class="flexCol tabHolder">
+        <h3>Equipment</h3>
+    </div>
+    <div id="crewTab" class="flexCol tabHolder">
+        <h3>Crew</h3>
+    </div>
+    <div id="contractTab" class="flexCol tabHolder">
+        <div id="subTabButtonHolder" class="flexRow">
+            <button id="sTB00">Loadout</button>
+            <button id="sTB01">Contracts</button>
+            <button id="sTB02">Control</button>
+        </div>
+        <div id="conSub0" class="flexCol tabHolder">
+            
+        </div>
+        <div id="conSub1" class="flexCol tabHolder">
+            <div id="contractRow" class="flexRow">
+                <div class="contractHolder flexCol">
+                    <h4 id="contract0Title">Bank Heist: Gold</h4>
+                    <p id="contract0Payout">Contract Payout: $100,000</p>
+                    <p id="contract0Collectible">Collectible Cash: $50,000</p>
+                    <p id="contract0Difficulty">Difficulty: Normal</p>
+                    <div id="skullHolder" class="flexRow">
+                        <img id="contract0Skull0" src="IMGS/hard.png">
+                        <img id="contract0Skull1" src="IMGS/veryhard.png">
+                        <img id="contract0Skull2" src="IMGS/mayhem.png">
+                        <img id="contract0Skull3" src="IMGS/overkill.png">
+                        <img id="contract0Skull4" src="IMGS/psychotic.png">
+                        <img id="contract0Skull5" src="IMGS/insanity.png">
+                    </div>
+                    <button id="contract0Button">Start Contract</button>
+                </div>
+                    <div class="contractHolder flexCol">
+                        <h4 id="contract1Title">Bank Heist: Gold</h4>
+                        <p id="contract1Payout">Contract Payout: $100,000</p>
+                        <p id="contract1Collectible">Collectible Cash: $50,000</p>
+                        <p id="contract1Difficulty">Difficulty: Normal</p>
+                        <div id="skullHolder" class="flexRow">
+                            <img id="contract1Skull0" src="IMGS/inactive.png">
+                            <img id="contract1Skull1" src="IMGS/inactive.png">
+                            <img id="contract1Skull2" src="IMGS/inactive.png">
+                            <img id="contract1Skull3" src="IMGS/inactive.png">
+                            <img id="contract1Skull4" src="IMGS/inactive.png">
+                            <img id="contract1Skull5" src="IMGS/inactive.png">
+                        </div>
+                        <button id="contract1Button">Start Contract</button>
+                    </div>
+                    <div class="contractHolder flexCol">
+                        <h4 id="contract2Title">Bank Heist: Gold</h4>
+                        <p id="contract2Payout">Contract Payout: $100,000</p>
+                        <p id="contract2Collectible">Collectible Cash: $50,000</p>
+                        <p id="contract2Difficulty">Difficulty: Normal</p>
+                        <div id="skullHolder" class="flexRow">
+                            <img id="contract2Skull0" src="IMGS/inactive.png">
+                            <img id="contract2Skull1" src="IMGS/inactive.png">
+                            <img id="contract2Skull2" src="IMGS/inactive.png">
+                            <img id="contract2Skull3" src="IMGS/inactive.png">
+                            <img id="contract2Skull4" src="IMGS/inactive.png">
+                            <img id="contract2Skull5" src="IMGS/inactive.png">
+                        </div>
+                        <button id="contract0Button">Start Contract</button>
+                    </div>
+            </div>
+        </div>
+        <div id="conSub2" class="flexCol tabHolder">
+            
+        </div>
+    </div>
+    <div id="infamyTab" class="flexCol tabHolder">
+        <h3>Infamy</h3>
+    </div>
+    <div id="settingsTab" class="flexCol tabHolder">
+        <div id="settingsButtonHolder" class="flexRow" style="margin-bottom:1vh">
+            <button onclick="save()">Save Game</button>
+            <button onclick="exportSave()">Export Save</button>
+            <button onclick="createPrompt('Import your save',0)">Import Save</button>
+            <button class="locked" onclick="createConfirmation('reset')">Delete Save (Exports)</button>
+        </div>
+        <div id="settingsButtonHolder" class="flexRow" style="margin-bottom:1vh">
+            
+        </div>
+        <a style="margin-bottom:1vh" href="https://discord.com/invite/JkQUnubuhx">Discord Link!</a>
+        <div id="changelogHolder" style="text-align:center">
+            <h3 id="currentVersionText">Current Version: v0.0.1</h3>
+            <p>v0.0.1 - Added </p>
+        </div>
+    </div>
+</body>
+    <script src="JS/Internal/BreakEternity.js"></script>
+    <script src="JS/Internal/Cache.js"></script>
+    <script src="JS/Internal/Formatting.js"></script>
+    <script src="JS/Internal/MyMath.js"></script>
+    <script src="JS/data.js"></script>
+    <script src="JS/main.js"></script>
+    <script src="JS/update.js"></script>
+    <script src="JS/contracts.js"></script>
+</html>
