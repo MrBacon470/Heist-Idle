@@ -6,6 +6,7 @@ function getDefaultObject() {
         offshoreCash: D(0),
         level: D(0),
         purchasedWeapon: new Array(12).fill(false),
+        purchasedArmor: new Array(6).fill(false),
         contracts: [],
         buyAmounts: [],
         time: Date.now(),

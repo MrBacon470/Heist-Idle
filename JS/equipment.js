@@ -84,7 +84,50 @@ const weapons = [
         level: D(55.00),
     },
 ]
-
+const armors = [
+    {
+        name: "Suit",
+        cost: D(0.00),
+        defense: D(5.00),
+        conceal: D(0.00),
+        level: D(0.00),
+    },
+    {
+        name: "Light Ballistic Vest",
+        cost: D(25.00),
+        defense: D(10.00),
+        conceal: D(5.00),
+        level: D(5.00),
+    },
+    {
+        name: "Ballistic Vest",
+        cost: D(50.00),
+        defense: D(15.00),
+        conceal: D(15.00),
+        level: D(12.00),
+    },
+    {
+        name: "Heavy Ballistic Vest",
+        cost: D(100.00),
+        defense: D(20.00),
+        conceal: D(30.00),
+        level: D(20.00),
+    },
+    {
+        name: "Flak Jacket",
+        cost: D(200.00),
+        defense: D(25.00),
+        conceal: D(50.00),
+        level: D(30.00),
+    },
+    {
+        name: "Combined Tactical Vest",
+        cost: D(400.00),
+        defense: D(30.00),
+        conceal: D(75.00),
+        level: D(40.00),
+    },
+]
 function updateEquipmentUI(a) {
     switch(a) {
         case 0:
@@ -99,6 +142,20 @@ function updateEquipmentUI(a) {
                     DOMCacheGetOrSet(`weapButton${i}`).classList = 'maxed'
                 else
                     DOMCacheGetOrSet(`weapButton${i}`).classList = data.spendingCash.lt(weapons[i].cost) || data.level.lt(weapons[i].level) ? 'locked' : 'unlocked'
+            }
+        break
+        case 1:
+            for(let i = 0; i < armors.length; i++) {
+                DOMCacheGetOrSet(`armrName${i}`).innerText = armors[i].name
+                DOMCacheGetOrSet(`armrStats${i}`).innerText = `Cost: $${formatSci(armors[i].cost)}\nDEF: ${formatSci(armors[i].defense)}\nCNL: ${formatSci(armors[i].conceal)}`
+                if(data.level.lt(armors[i].level)) 
+                    DOMCacheGetOrSet(`armrButton${i}`).innerText = `Req: Level ${formatSci(armors[i].level)}`
+                else 
+                    DOMCacheGetOrSet(`armrButton${i}`).innerText = !data.purchasedArmor[i] ? `Buy: $${formatSci(armors[i].cost)}` : 'Purchased'
+                if(data.purchasedArmor[i])
+                    DOMCacheGetOrSet(`armrButton${i}`).classList = 'maxed'
+                else
+                    DOMCacheGetOrSet(`armrButton${i}`).classList = data.spendingCash.lt(armors[i].cost) || data.level.lt(armors[i].level) ? 'locked' : 'unlocked'
             }
         break
     }
