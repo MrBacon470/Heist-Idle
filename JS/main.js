@@ -32,8 +32,8 @@ function changeTab(i) {
         DOMCacheGetOrSet(`${tabIDs[i]}Tab`).style.display = i === data.currentTab ? 'flex' : 'none'
     }
 }
-const subAmts = [3]
-const subIDs = ['con']
+const subAmts = [2,2]
+const subIDs = ['con','eqp']
 function changeSubTab(a,b) {
     
     data.currentSubTab[a] = b

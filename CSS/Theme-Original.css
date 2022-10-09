@@ -90,6 +90,12 @@ h1,h2,h3,h4 { margin-bottom: 1vh;}
 .credit img {width: 1.5em; height: 1.5em; margin-right:.1em;}
 .credit a, .credit p {text-align: center; font-size: 1.2em;}
 
+.contractHolder {border: 2px solid var(--money-color); border-radius: 2px; padding: 1vh 1vw 1vh 1vw; margin: 1vh 1vw 1vh 1vw;}
+
+.equipCont {width: 70em; height: 40em; overflow: scroll; display: flex; flex-direction: row; align-items:flex-start; flex-wrap: wrap; position:relative; border: 2px solid;}
+.equipHold {border: 2px solid whitesmoke; border-radius: 2px; padding: 1vh 1vh 1vh 1vh; margin: 1vh 1vw 1vh 1vw;flex: 1 0 21%;}
+.equipHold p {text-align: center; font-weight: bold;}
+
 .badge-red {
     background-color: var(--locked-color);
     color: whitesmoke;
@@ -171,7 +177,7 @@ h1,h2,h3,h4 { margin-bottom: 1vh;}
 
 #tabButtonHolder button, #settingsButtonHolder button, #subTabButtonHolder button {margin: 0.25vh 0.25vw 0.25vh 0.25vw;}
 
-.contractHolder {border: 2px solid var(--money-color); border-radius: 2px; padding: 1vh 1vw 1vh 1vw; margin: 1vh 1vw 1vh 1vw;}
+
 
 #skullHolder img {width: 32px; height: 32px; margin: 0 0.05vw 0 0.05vw;}
 #skullHolder {border: 2px solid whitesmoke; padding: .25em; margin-bottom: .5vh;}

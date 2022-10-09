@@ -8,7 +8,7 @@
     <script src="JS/Internal/jquery-3.6.0.min.js"></script>
     <script src="JS/Internal/notify.js"></script>
     <link rel="stylesheet" href="CSS/Theme-Original.css">
-    <link id="faviconLink" rel="icon" type="image/png" href="Imgs/flasks/mysticalFlask.png">
+    <link id="faviconLink" rel="icon" type="image/png" href="Imgs/money.png">
     <title>Heist Idle</title>
 </head>
 <body>
@@ -51,21 +51,83 @@
         <button id="tabButton4">Settings</button>
     </div>
     <div id="equipmentTab" class="flexCol tabHolder">
-        <h3>Equipment</h3>
+        <div id="subTabButtonHolder" class="flexRow">
+            <button id="sTB10">Weapons</button>
+            <button id="sTB11">Armor</button>
+        </div>
+        <div id="eqpSub0" class="equipCont flexRow">
+                <div class="equipHold flexCol">
+                    <p id="weapName0">AK-47</p>
+                    <p id="weapStats0">Cost: Free | DMG: 10 | CNL: 12</p>
+                    <button id="weapButton0">Unlock!</button>
+                </div>
+                <div class="equipHold flexCol">
+                    <p id="weapName1">M4A1</p>
+                    <p id="weapStats1">Cost: 100 | DMG: 15 | CNL: 10</p>
+                    <button id="weapButton1">Unlock!</button>
+                </div>
+                <div class="equipHold flexCol">
+                    <p id="weapName2">M16A4</p>
+                    <p id="weapStats2">Cost: 500 | DMG: 20 | CNL: 8</p>
+                    <button id="weapButton2">Unlock!</button>
+                </div>
+                <div class="equipHold flexCol">
+                    <p id="weapName3">M249</p>
+                    <p id="weapStats3">Cost: 1000 | DMG: 25 | CNL: 6</p>
+                    <button id="weapButton3">Unlock!</button>
+                </div>
+                <div class="equipHold flexCol">
+                    <p id="weapName4">M60</p>
+                    <p id="weapStats4">Cost: 5000 | DMG: 30 | CNL: 4</p>
+                    <button id="weapButton4">Unlock!</button>
+                </div>
+                <div class="equipHold flexCol">
+                    <p id="weapName5">M82</p>
+                    <p id="weapStats5">Cost: 10000 | DMG: 35 | CNL: 2</p>
+                    <button id="weapButton5">Unlock!</button>
+                </div>
+                <div class="equipHold flexCol">
+                    <p id="weapName6">M107</p>
+                    <p id="weapStats6">Cost: 50000 | DMG: 40 | CNL: 1</p>
+                    <button id="weapButton6">Unlock!</button>
+                </div>
+                <div class="equipHold flexCol">
+                    <p id="weapName7">M1 Garand</p>
+                    <p id="weapStats7">Cost: 100000 | DMG: 45 | CNL: 0</p>
+                    <button id="weapButton7">Unlock!</button>
+                </div>
+                <div class="equipHold flexCol">
+                    <p id="weapName8">M1 Garand</p>
+                    <p id="weapStats8">Cost: 100000 | DMG: 45 | CNL: 0</p>
+                    <button id="weapButton8">Unlock!</button>
+                </div>
+                <div class="equipHold flexCol">
+                    <p id="weapName9">M1 Garand</p>
+                    <p id="weapStats9">Cost: 100000 | DMG: 45 | CNL: 0</p>
+                    <button id="weapButton9">Unlock!</button>
+                </div>
+                <div class="equipHold flexCol">
+                    <p id="weapName10">M1 Garand</p>
+                    <p id="weapStats10">Cost: 100000 | DMG: 45 | CNL: 0</p>
+                    <button id="weapButton10">Unlock!</button>
+                </div>
+                <div class="equipHold flexCol">
+                    <p id="weapName11">M1 Garand</p>
+                    <p id="weapStats11">Cost: 100000 | DMG: 45 | CNL: 0</p>
+                    <button id="weapButton11">Unlock!</button>
+                </div>
+                
     </div>
+</div>
     <div id="crewTab" class="flexCol tabHolder">
         <h3>Crew</h3>
     </div>
     <div id="contractTab" class="flexCol tabHolder">
         <div id="subTabButtonHolder" class="flexRow">
-            <button id="sTB00">Loadout</button>
-            <button id="sTB01">Contracts</button>
-            <button id="sTB02">Control</button>
+            <button id="sTB00">Contracts</button>
+            <button id="sTB01">Control</button>
         </div>
         <div id="conSub0" class="flexCol tabHolder">
-            
-        </div>
-        <div id="conSub1" class="flexCol tabHolder">
             <div id="contractRow" class="flexRow">
                 <div class="contractHolder flexCol">
                     <h4 id="contract0Title">Bank Heist: Gold</h4>
@@ -114,7 +176,7 @@
                     </div>
             </div>
         </div>
-        <div id="conSub2" class="flexCol tabHolder">
+        <div id="conSub1" class="flexCol tabHolder">
             
         </div>
     </div>
@@ -146,4 +208,5 @@
     <script src="JS/main.js"></script>
     <script src="JS/update.js"></script>
     <script src="JS/contracts.js"></script>
+    <script src="JS/equipment.js"></script>
 </html>
